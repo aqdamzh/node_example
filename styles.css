@@ -40,6 +40,14 @@ h1 {
     border-radius: 5px;
 }
 
+.all-songs {
+    margin: 30px;
+}
+
+.most-played {
+    margin: 30px;
+}
+
 .added {
     background-color: #4D774E;
 }
