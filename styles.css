@@ -20,6 +20,9 @@ h1 {
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.song:hover {
+    background-color: #7D5260;
+}
 
 .thumbnail {
     width: 100px;
@@ -84,6 +87,19 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #282828;
+    color: #FFF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 button:disabled {
     background-color: #888888;
     cursor: not-allowed;
@@ -119,4 +135,34 @@ button:disabled {
 .label-duration {
     margin-left: auto;
     margin-right: 10px;
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid #1DB954;
+    margin-left: auto;
+    margin-right: 50px;
+    display: none;
+}
+
+.play-icon:hover {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid #282828;
+    margin-left: auto;
+    margin-right: 50px;
+    display: none;
+}
+
+ .song:hover .song-number {
+    display: none;
+}
+
+.song:hover .duration {
+    margin-right: 40px;
 }
