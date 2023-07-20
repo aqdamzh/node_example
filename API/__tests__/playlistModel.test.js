@@ -1,12 +1,12 @@
 
 const GenerateID = require("../GenerateID");
 const Playlist = require("../models/Playlist");
-
+//--------------------------------------------------------------
 test('Auto generated ID, it should increment by 1', () => {
     const ID = GenerateID.getID();
     expect(GenerateID.getID()).toEqual(ID+1);
 });
-
+//--------------------------------------------------------------
 test('Populate Songs, it should return list songs by unique auto generated ID', 
 () => {
     const songs = Playlist.getListSongs();
@@ -29,14 +29,14 @@ test('Populate Songs, it should return list songs by unique auto generated ID',
     //console.log(Playlist.getListSongs());
 }
 );
-
+//--------------------------------------------------------------
 test('Get song by ID, It should return the song that match ID', () => {
     const songs = Playlist.getListSongs();
     songs.forEach(song => {
         expect(song).toEqual(Playlist.getSong(song.songId));
     });
 });
-
+//--------------------------------------------------------------
 test('Adding new song, It should add song to the playlist', () => {
     const playlistLength = Playlist.getListSongs().length;
     const song = Playlist.addSong("Test", ["test1", "test2"], "http://test");
