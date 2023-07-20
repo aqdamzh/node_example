@@ -8,6 +8,12 @@ controller.get('/', (req, res) => {
     res.json(playlist);
 });
 
+controller.post('/', (req, res) => {
+    const {title, artist, url} = req.body;
+    const song = PlaylistService.addSong(title, artist, url);
+    res.status(201).json(song);
+});
+
 controller.get('/play/:id', (req, res) => {
     const id = req.params.id;
     const song = PlaylistService.incPlayCount(id);
