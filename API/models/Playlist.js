@@ -25,6 +25,17 @@ class Playlist {
     static getListSongs() {
         return playlist;
     }
+
+    static getSong(songId) {
+        return playlist.find(song => song.songId === songId);
+    }
+
+    static addSong(title, artists, url){
+        const ID = GenerateID.getID;
+        const song = new Playlist(ID, title, artists, url, 0);
+        playlist.push(song);
+        return song;
+    }
 }
 
 module.exports = Playlist;

@@ -29,3 +29,22 @@ test('Populate Songs, it should return list songs by unique auto generated ID',
     //console.log(Playlist.getListSongs());
 }
 );
+
+test('Get song by ID, It should return the song that match ID', () => {
+    const songs = Playlist.getListSongs();
+    songs.forEach(song => {
+        expect(song).toEqual(Playlist.getSong(song.songId));
+    });
+});
+
+test('Adding new song, It should add song to the playlist', () => {
+    const playlistLength = Playlist.getListSongs().length;
+    const song = Playlist.addSong("Test", ["test1", "test2"], "http://test");
+
+    //check length of array if playlist array added new element
+    expect(playlistLength + 1).toEqual(Playlist.getListSongs().length);
+
+    //check if return of added song match the content of latest added song in playlist
+    const length = Playlist.getListSongs().length;
+    expect(Playlist.getListSongs()[length-1]).toEqual(song);
+});
