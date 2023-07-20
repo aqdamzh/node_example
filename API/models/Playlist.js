@@ -36,6 +36,17 @@ class Playlist {
         playlist.push(song);
         return song;
     }
+
+    static updateSong(updatedSong){
+        playlist = playlist.map((song) => {
+            if(song.songId === updatedSong.songId){
+                return updatedSong;
+            } else {
+                return song;
+            }
+        });
+        return playlist;
+    }
 }
 
 module.exports = Playlist;

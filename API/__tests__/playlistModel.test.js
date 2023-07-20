@@ -48,3 +48,25 @@ test('Adding new song, It should add song to the playlist', () => {
     const length = Playlist.getListSongs().length;
     expect(Playlist.getListSongs()[length-1]).toEqual(song);
 });
+//--------------------------------------------------------------
+test('Updated song, It should update song to the playlist', () => {
+    const oldPlaylist = Playlist.getListSongs().map(song => {return song});
+    const updatedSong = {songId: 1,title: "Test", 
+    artists: ["test1", "test2"], url: "http://test", playCount: 4};
+
+    const newPlaylist = Playlist.updateSong(updatedSong);
+
+    //check if playlist change when song updated
+    expect(newPlaylist).not.toEqual(oldPlaylist);
+
+    //check if song with id=1 updated and besides updated song 
+    //check if the rest of song in playlist unchanged;
+    newPlaylist.forEach(song => {
+        if(song.songId === 1){
+            expect(song).toEqual(updatedSong);
+        }else {
+            const flag = oldPlaylist.find( it => it.songId === song.songId);
+            expect(song).toEqual(flag);
+        }
+    });
+});
