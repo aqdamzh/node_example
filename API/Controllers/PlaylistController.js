@@ -14,4 +14,9 @@ controller.get('/play/:id', (req, res) => {
     res.json(song);
 });
 
+controller.get('/most-played', (req, res) => {
+    const playlist = PlaylistService.getMostPlayed();
+    res.json(playlist);
+});
+
 module.exports = controller;

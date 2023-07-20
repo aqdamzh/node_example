@@ -20,6 +20,14 @@ class PlaylistService {
         song.playCount += 1;
         return Playlist.updateSong(song);
     }
+
+    static getMostPlayed() {
+        const playlist = Playlist.getListSongs();
+        playlist.sort((a, b) => {
+            return b.playCount - a.playCount;
+        });
+        return playlist;
+    }
 }
 
 module.exports = PlaylistService;
