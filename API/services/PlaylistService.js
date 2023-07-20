@@ -16,7 +16,7 @@ class PlaylistService {
     }
 
     static incPlayCount(id) {
-        const song = Playlist.getSong(id);
+        const song = Playlist.getSong(Number(id));
         song.playCount += 1;
         return Playlist.updateSong(song);
     }

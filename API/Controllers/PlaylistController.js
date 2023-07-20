@@ -8,4 +8,10 @@ controller.get('/', (req, res) => {
     res.json(playlist);
 });
 
+controller.get('/play/:id', (req, res) => {
+    const id = req.params.id;
+    const song = PlaylistService.incPlayCount(id);
+    res.json(song);
+});
+
 module.exports = controller;
