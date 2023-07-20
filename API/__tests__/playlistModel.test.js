@@ -54,7 +54,8 @@ test('Updated song, It should update song to the playlist', () => {
     const updatedSong = {songId: 1,title: "Test", 
     artists: ["test1", "test2"], url: "http://test", playCount: 4};
 
-    const newPlaylist = Playlist.updateSong(updatedSong);
+    Playlist.updateSong(updatedSong);
+    const newPlaylist = Playlist.getListSongs();
 
     //check if playlist change when song updated
     expect(newPlaylist).not.toEqual(oldPlaylist);

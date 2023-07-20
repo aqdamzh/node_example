@@ -45,7 +45,7 @@ class Playlist {
                 return song;
             }
         });
-        return playlist;
+        return updatedSong;
     }
 }
 
