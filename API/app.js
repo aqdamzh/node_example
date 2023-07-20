@@ -1,7 +1,14 @@
-import express from "express";
+const express = require("express");
+const PlaylistController = require("./Controllers/PlaylistController.js");
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.json());
 
-export default app;
+const apiRoute = express.Router();
+app.use('/api', apiRoute);
+
+apiRoute.use('/playlist', PlaylistController);
+
+module.exports = app;

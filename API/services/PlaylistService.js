@@ -2,7 +2,7 @@ const Playlist = require("../models/Playlist");
 
 class PlaylistService {
     static getPlaylist(){
-        return Playlist.getListSongs;
+        return Playlist.getListSongs();
     }
 
     static getSong(id) {
