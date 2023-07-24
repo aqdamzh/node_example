@@ -15,7 +15,7 @@ playCount: 182847751},
 
 class Playlist {
     constructor(songId, title, artists, url, playCount) {
-        this.SongId = songId;
+        this.songId = songId;
         this.title = title;
         this.artists = artists;
         this.url = url;
